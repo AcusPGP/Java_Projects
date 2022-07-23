@@ -1,4 +1,4 @@
-package ReadInteger;
+package readinteger;
 
 import java.util.LinkedList;
 import java.util.Scanner;
