@@ -9,4 +9,6 @@ public interface IGeneral {
     public void setAge(int age) ;
 
     public int getAge() ;
+
+    public void calculateSalary();
 }
