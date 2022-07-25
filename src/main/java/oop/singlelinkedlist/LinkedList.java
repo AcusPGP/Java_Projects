@@ -11,22 +11,19 @@ public class LinkedList {
     // Linked list Node.
     // Node is a static nested class
     // so main() can access it
-    static class Node {
+    static class Node <T>{
 
-        int data;
+        T data;
         Node next;
 
         // Constructor
-        Node(int d) {
+        Node(T d) {
             data = d;
             next = null;
         }
     }
 
-    // Method to insert a new node
-    public static LinkedList insert(LinkedList list,
-                                    int data) {
-        // Create a new node with given data
+    public static LinkedList insert(LinkedList list, Object data) {
         Node new_node = new Node(data);
         new_node.next = null;
 
@@ -49,6 +46,7 @@ public class LinkedList {
         // Return the list by head
         return list;
     }
+
 
     // Method to print the LinkedList.
     public static void printList(LinkedList list) {
@@ -76,7 +74,6 @@ public class LinkedList {
         //
         // ******INSERTION******
         //
-
         // Insert the values
         list = insert(list, 1);
         list = insert(list, 2);
