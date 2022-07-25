@@ -13,6 +13,10 @@ public abstract class Person implements IGeneral {
 
     }
 
+    public Person(String name) {
+        this.name = name;
+    }
+
     @Override
     public void setName(String sName) {
         this.name = sName;
