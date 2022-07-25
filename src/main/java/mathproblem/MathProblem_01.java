@@ -1,17 +1,17 @@
-package MathProblem;
+package mathproblem;
 
 import java.util.Scanner;
 
 /**
- *  Exercise 16: S(n) = Sqr(n+Sqr(n-1+Sqr(n-2+...Sqr(2+Sqr(1)))))
+ * Exercise 15: S(n) = Sqr(2+Sqr(2+...Sqr(2+Sqr(2))))
  */
-public class MathProblem_02 {
+public class MathProblem_01 {
     public static void main(String[] args) {
         getInput();
     }
 
     /**
-     * Get input
+     * get Input
      */
     static void getInput() {
         while (true) {
@@ -21,9 +21,8 @@ public class MathProblem_02 {
             System.out.print("Number: ");
             s = sc.nextLine();
             int n = Integer.parseInt(s);
-            float t = 1;
-            int a = 1;
-            float sum = sumSqr(n, a, t);
+            float t = (float) Math.sqrt(2);
+            float sum = sumSqr(n, t);
             System.out.println("The result is " + sum);
         }
     }
@@ -31,14 +30,13 @@ public class MathProblem_02 {
     /**
      * Calculate the math problem
      * @param n
-     * @param a
      * @param t
      * @return
      */
-    static float sumSqr(int n, int a, float t) {
-        if (n == a) {
+    static float sumSqr(int n, float t) {
+        if (n == 1) {
             return t;
         }
-        return sumSqr(n, a + 1, (float) Math.sqrt(a + 1 + t));
+        return sumSqr(n - 1, (float) Math.sqrt(2 + t));
     }
 }

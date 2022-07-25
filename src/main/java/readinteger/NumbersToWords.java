@@ -1,4 +1,4 @@
-package ReadInteger;
+package readinteger;
 
 public class NumbersToWords {
     private static final String ZERO = "zero";
