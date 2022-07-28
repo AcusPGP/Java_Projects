@@ -1,7 +1,6 @@
 package oop;
 
-/**
- *
-public class Engineer extends exercise.phuc.oop.Person {
+
+public class Engineer extends Person {
+
 }
-*/

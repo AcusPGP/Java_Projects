@@ -3,6 +3,7 @@ package string;
 import java.util.HashMap;
 import java.util.Map;
 
+
 public class LongestString {
     public Map<Character, Integer> findLongestString(String input) {
         Map<Character, Integer> map = new HashMap<>();
@@ -22,7 +23,9 @@ public class LongestString {
             convert += map.get(input.charAt(i));
         }
         System.out.println(convert);
+
         return map;
+
     }
 
     public static void main(String[] args) {
