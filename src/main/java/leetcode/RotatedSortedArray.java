@@ -8,15 +8,15 @@ public class RotatedSortedArray {
         for (int i = 0; i < nums.length; i++) {
             map.put(i, 1);
             if(nums[i] == target) {
-                return 0;
+                return i;
             }
         }
         return -1;
     }
 
     public static void main(String[] args) {
-        int[] nums = {0, 1, 2, 4, 5};
-        int target = 4;
+        int[] nums = {4, 5, 6, 7, 0 ,1 ,2};
+        int target = 2;
         int outPut = search(nums, target);
         System.out.println("Output: " + outPut);
     }
