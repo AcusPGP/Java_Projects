@@ -4,9 +4,14 @@ import java.io.*;
 
 public class OneMillionNamesToFile {
     public static void main(String[] args) throws IOException {
+        long beign = System.currentTimeMillis();
         file();
         int num = 999999;
         findNumber(num);
+        long end = System.currentTimeMillis();
+        long time = end - beign;
+        System.out.println("Time :" + time + " milli seconds." );
+
     }
 
     public static void file() {
