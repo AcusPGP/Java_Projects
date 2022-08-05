@@ -6,7 +6,7 @@ public class OneMillionNamesToFile {
     public static void main(String[] args) throws IOException {
         long beign = System.currentTimeMillis();
         file();
-        int num = 999999;
+        int num = 4600000;
         findNumber(num);
         long end = System.currentTimeMillis();
         long time = end - beign;
@@ -19,7 +19,7 @@ public class OneMillionNamesToFile {
             File file = new File("/Users/macbook/IdeaProjects/Java_Projects/OneMillionNames.txt");
             if (file.createNewFile()) {
                 FileWriter writer = new FileWriter("/Users/macbook/IdeaProjects/Java_Projects/OneMillionNames.txt");
-                for (int i = 0; i < 1000000; i++) {
+                for (int i = 0; i < 5000000; i++) {
                     writer.write("Nguyen Van " + i + "\n");
                 }
                 writer.close();
