@@ -4,5 +4,5 @@ public abstract class AccountOpenClose {
 
     public abstract void deposit(long value);
 
-    public abstract long withDraw();
+    public abstract void withDraw(long value);
 }

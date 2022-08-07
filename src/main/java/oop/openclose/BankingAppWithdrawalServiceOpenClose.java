@@ -19,8 +19,8 @@ public class BankingAppWithdrawalServiceOpenClose {
     public void proceed() {
 
         for(AccountOpenClose accountOpenClose : listAccountOpenClose) {
-            accountOpenClose.deposit(0);
-            accountOpenClose.withDraw();
+            accountOpenClose.deposit(2000);
+            accountOpenClose.withDraw(1000);
         }
     }
 

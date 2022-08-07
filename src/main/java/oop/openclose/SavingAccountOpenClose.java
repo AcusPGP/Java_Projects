@@ -7,8 +7,7 @@ public class SavingAccountOpenClose extends AccountOpenClose {
     }
 
     @Override
-    public long withDraw() {
-        System.out.println("SavingAccount withDraw");
-        return 0;
+    public void withDraw(long money) {
+        System.out.println("SavingAccount withDraw " + money);
     }
 }
