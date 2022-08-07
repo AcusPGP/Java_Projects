@@ -2,12 +2,12 @@ package oop.liskovsubstitution;
 
 public class CurrentAccountLiskovLiskov extends WithdrawableAccountLiskov {
     @Override
-    public void deposit(long number) {
-
+    public void deposit(long money) {
+        System.out.println("CurrentAccountLiskovLiskov deposit " + money);
     }
 
     @Override
-    public long withdraw() {
-        return 0;
+    public void withdraw(long money) {
+        System.out.println("CurrentAccountLiskovLiskov withdraw " + money);
     }
 }

@@ -2,6 +2,12 @@ package oop.openclose;
 
 import java.util.ArrayList;
 
+/**
+ * Consequently, the BankingAppWithdrawalService is open for the extension with new account types,
+ * but closed for modification, in that the new types don't require it to change in order to integrate
+ *
+ * Objects or entities should be open for extension but closed for modification.
+ */
 public class BankingAppWithdrawalServiceOpenClose {
 
     ArrayList<AccountOpenClose> listAccountOpenClose;
@@ -20,7 +26,7 @@ public class BankingAppWithdrawalServiceOpenClose {
 
         for(AccountOpenClose accountOpenClose : listAccountOpenClose) {
             accountOpenClose.deposit(2000);
-            accountOpenClose.withDraw(1000);
+            accountOpenClose.withdraw(1000);
         }
     }
 
