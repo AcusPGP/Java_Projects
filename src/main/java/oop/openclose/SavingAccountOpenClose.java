@@ -1,6 +1,6 @@
 package oop.openclose;
 
-public class SavingAccount extends Account {
+public class SavingAccountOpenClose extends AccountOpenClose {
     @Override
     public void deposit(long value) {
         System.out.println("SavingAccount deposit");
