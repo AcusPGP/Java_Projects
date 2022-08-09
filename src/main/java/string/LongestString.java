@@ -1,37 +1,42 @@
 package string;
 
 import java.util.HashMap;
-import java.util.Map;
-
 
 public class LongestString {
-    public Map<Character, Integer> findLongestString(String input) {
-        Map<Character, Integer> map = new HashMap<>();
-        int i, j;
-        for (i = 0; i < input.length(); i++) {
-            if (map.containsValue(input.charAt(i))) {
-                map.get(map.containsKey(input.charAt(i)));
-            } else {
-                map.put(input.charAt(i), i);
+    static int longestUniqueSubsttr(String s)
+    {
+
+        // Creating a set to store the last positions of occurrence
+        HashMap<Character, Integer> seen = new HashMap<>();
+        int maximum_length = 0;
+
+        // starting the initial point of window to index 0
+        int start = 0;
+
+        for(int end = 0; end < s.length(); end++)
+        {
+            // Checking if we have already seen the element or not
+            if(seen.containsKey(s.charAt(end)))
+            {
+                // If we have seen the number, move the start pointer
+                // to position after the last occurrence
+                start = Math.max(start, seen.get(s.charAt(end)) + 1);
             }
-        }
-        for (Map.Entry e : map.entrySet()) {
-            System.out.println("Key:" + e.getKey() + " and Value: " + e.getValue());
-        }
-        String convert = "";
-        for (i = 0; i < input.length(); i++) {
-            convert += map.get(input.charAt(i));
-        }
-        System.out.println(convert);
 
-        return map;
-
+            // Updating the last seen value of the character
+            seen.put(s.charAt(end), end);
+            maximum_length = Math.max(maximum_length, end-start + 1);
+        }
+        return maximum_length;
     }
 
-    public static void main(String[] args) {
-        String input = "phuch";
-        LongestString s = new LongestString();
-        s.findLongestString(input);
+    // Driver code
+    public static void main(String []args)
+    {
+        String s = "geeksforgeeks";
+        System.out.println("The input String is " + s);
+        int length = longestUniqueSubsttr(s);
+        System.out.println("The length of the longest non-repeating character substring is " + length);
     }
 }
 
