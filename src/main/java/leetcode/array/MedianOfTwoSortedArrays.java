@@ -6,6 +6,7 @@ public class MedianOfTwoSortedArrays {
 
     /**
      * Run time = 10ms
+     *
      * @param nums1
      * @param nums2
      * @return
@@ -40,6 +41,7 @@ public class MedianOfTwoSortedArrays {
 
     /**
      * Run time = 4ms
+     *
      * @param nums1
      * @param nums2
      * @return
@@ -59,11 +61,11 @@ public class MedianOfTwoSortedArrays {
             int partX = (lower + high) / 2;
             int partY = (combineLength + 1) / 2 - partX;
 
-            int leftX = getMax (nums1, partX);
-            int rightX = getMin (nums1, partX);
+            int leftX = getMax(nums1, partX);
+            int rightX = getMin(nums1, partX);
 
-            int leftY = getMax (nums2, partX);
-            int rightY = getMin (nums2, partX);
+            int leftY = getMax(nums2, partX);
+            int rightY = getMin(nums2, partX);
 
             if (leftX <= rightY && leftY <= rightX) {
                 if (combineLength % 2 == 0) {
@@ -71,7 +73,7 @@ public class MedianOfTwoSortedArrays {
                 }
                 return Math.max(leftX, leftY);
             }
-            if(leftX > rightY) {
+            if (leftX > rightY) {
                 high = partX - 1;
             } else {
                 lower = partX - 1;
@@ -82,7 +84,7 @@ public class MedianOfTwoSortedArrays {
 
     private int getMax(int[] nums, int partion) {
         if (partion == 0) {
-            return (int)Double.NEGATIVE_INFINITY;
+            return (int) Double.NEGATIVE_INFINITY;
         } else {
             return nums[partion - 1];
         }
@@ -90,7 +92,7 @@ public class MedianOfTwoSortedArrays {
 
     private int getMin(int[] nums, int partion) {
         if (partion == nums.length) {
-            return (int)Double.POSITIVE_INFINITY;
+            return (int) Double.POSITIVE_INFINITY;
         } else {
             return nums[partion];
         }
@@ -98,36 +100,37 @@ public class MedianOfTwoSortedArrays {
 
     /**
      * Run time = 2ms
+     *
      * @param nums1
      * @param nums2
      * @return
      */
     public double findMedianSortedArrays_03(int[] nums1, int[] nums2) {
-        int[] sum = Arrays.copyOf(nums1, nums1.length+nums2.length);
+        int[] sum = Arrays.copyOf(nums1, nums1.length + nums2.length);
         int m = nums1.length - 1;
         int n = nums2.length - 1;
         int index = sum.length - 1;
         while (m >= 0 && n >= 0) {
-            if(nums1[m] < nums2[n]){
+            if (nums1[m] < nums2[n]) {
                 sum[index--] = nums2[n--];
-            }else {
+            } else {
                 sum[index--] = nums1[m--];
             }
         }
-        while(n >= 0){
+        while (n >= 0) {
             sum[index--] = nums2[n--];
         }
-        if(sum.length % 2 == 0){
-            return (double) (sum[(sum.length-1)/2] + sum[(sum.length)/2])/2;
-        }else {
-            return sum[(sum.length)/2];
+        if (sum.length % 2 == 0) {
+            return (double) (sum[(sum.length - 1) / 2] + sum[(sum.length) / 2]) / 2;
+        } else {
+            return sum[(sum.length) / 2];
         }
     }
 
     public static void main(String[] args) {
         int[] nums1 = {1, 3};
         int[] nums2 = {2};
-        double median = findMedianSortedArrays_01(nums1, nums2);
+        findMedianSortedArrays_01(nums1, nums2);
         MedianOfTwoSortedArrays result = new MedianOfTwoSortedArrays();
         result.findMedianSortedArrays_02(nums1, nums2);
         result.findMedianSortedArrays_03(nums1, nums2);
