@@ -10,7 +10,7 @@ public class OneMillionNamesToFile {
         findNumber(num);
         long end = System.currentTimeMillis();
         long time = end - beign;
-        System.out.println("Time :" + time + " milli seconds." );
+        System.out.println("Time :" + time + " milli seconds.");
 
     }
 
@@ -20,7 +20,18 @@ public class OneMillionNamesToFile {
             if (file.createNewFile()) {
                 FileWriter writer = new FileWriter("/Users/macbook/IdeaProjects/Java_Projects/OneMillionNames.txt");
                 for (int i = 0; i < 5000000; i++) {
-                    writer.write("Nguyen Van " + i + "\n");
+                    int id = i;
+                    String name = "NguyenVan" + i;
+                    int age = i;
+                    String address = "HCM";
+                    String type;
+                    if (i % 2 == 0) {
+                        type = "worker";
+                    } else {
+                        type = "engineer";
+                    }
+                    String level = "employee";
+                    writer.write(id + "@" + name + "@" + age + "@" + address + "@" + type + "@" + level + "\n");
                 }
                 writer.close();
             }
