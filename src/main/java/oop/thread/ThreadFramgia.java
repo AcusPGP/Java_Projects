@@ -1,7 +1,7 @@
-package thread;
+package oop.thread;
 
 
-public class ThreadFramgia extends Thread{
+public class ThreadFramgia extends Thread {
     @Override
     public void run() {
         System.out.println();

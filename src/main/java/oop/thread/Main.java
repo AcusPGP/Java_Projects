@@ -1,4 +1,4 @@
-package thread;
+package oop.thread;
 
 public class Main {
     public static void main(String[] args) {
