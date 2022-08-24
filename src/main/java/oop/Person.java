@@ -2,9 +2,20 @@ package oop;
 
 public abstract class Person implements IGeneral {
 
-    private String name;
 
-    private int age;
+    String name;
+
+    int age;
+
+    String address;
+
+    public Person() {
+
+    }
+
+    public Person(String name) {
+        this.name = name;
+    }
 
     @Override
     public void setName(String sName) {
@@ -25,4 +36,5 @@ public abstract class Person implements IGeneral {
     public int getAge() {
         return age;
     }
+
 }
