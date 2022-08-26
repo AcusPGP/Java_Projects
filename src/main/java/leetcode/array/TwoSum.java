@@ -24,7 +24,7 @@ public class TwoSum {
         for (int i = 0; i < nums.length; i++) {
             int temp = target - nums[i];
             if (map.containsKey(temp) && map.get(temp) != i) {
-                System.out.println("[" + i + "," + map.get(temp) + "]");
+                System.out.println("[" + i + ", " + map.get(temp) + "]");
                 return new int[] {i, map.get(temp)};
             }
         }
@@ -45,8 +45,8 @@ public class TwoSum {
     }
 
     public static void main(String[] args) {
-        int[] nums = {1, 2, 3};
-        int target = 4;
+        int[] nums = {3, 3};
+        int target = 6;
         TwoSum1(nums, target);
         TwoSum2(nums, target);
         TwoSum3(nums, target);
